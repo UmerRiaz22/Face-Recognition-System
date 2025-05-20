@@ -16,10 +16,7 @@ Ensure you have these installed before proceeding.
   
  git clone https://github.com/UmerRiaz22/Face-Recognition-System
 
-    ```bash
-     https://github.com/UmerRiaz22/Face-Recognition-System
-
-```
+    https://github.com/UmerRiaz22/Face-Recognition-System
 
 2.  **Create a virtual environment and activate it:**
 
@@ -51,29 +48,29 @@ source venv/bin/activate
 4.  **Set up the PostgreSQL database:**
 
     *   Ensure your PostgreSQL server is running.
-    *   The application will attempt to connect to a database named `face_recognition_system` on `localhost` with user `postgres` and password `2486`. You may need to create this database and user or update the connection details in `Helper.py` if your setup is different.
+    *   The application will attempt to connect to a database named `face_recognition_system` on `localhost` with user `postgres` and password `2486`. You may need to create this database and user or update the connection details in `Helper.py` if your setup is different.You can Change The Above Details Related to Database as Per you Requirments
 
 ## Running the Backend
 
-1.  **Navigate to the `Backendapis` directory:**
+1.  **Navigate to the `Cloned` directory:**
  
 
 2.  **Activate your virtual environment (if not already active):**
 
-    ```bash
+    
 # On Windows
 .\venv\Scripts\activate
 # On macOS/Linux
 source venv/bin/activate
-```
+
 
 3.  **Run the FastAPI application:**
 
-    ```bash
-uvicorn app:app --reload
-```
+ 
+ * uvicorn app:app --reload
 
-    The application will run on `http://0.0.0.0:8000`.
+
+The application will run on `http://0.0.0.0:8000`.
 
 ## API Endpoints
 
