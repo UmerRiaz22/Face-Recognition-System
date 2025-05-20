@@ -48,7 +48,21 @@ source venv/bin/activate
 4.  **Set up the PostgreSQL database:**
 
     *   Ensure your PostgreSQL server is running.
-    *   The application will attempt to connect to a database named `face_recognition_system` on `localhost` with user `postgres` and password `2486`. You may need to create this database and user or update the connection details in `Helper.py` if your setup is different.You can Change The Above Details Related to Database as Per you Requirments
+    *   Create a new database named `face_recognition_system`.
+    *   Create a new user with username `postgres` and password `2486`.
+    *   Grant all privileges on the `face_recognition_system` database to the `postgres` user.
+
+
+
+
+The application will attempt to connect to a PostgreSQL database named `face_recognition_system` on `localhost` using the credentials:
+
+- **User:** `postgres`  
+- **Password:** `2486`  
+
+If your setup differs, please **create the database and user** accordingly, or **update the connection settings** in `Helper.py` to match your environment.  
+
+
 
 ## Running the Backend
 
