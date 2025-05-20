@@ -30,7 +30,9 @@ app.add_middleware(
 face_manager = FaceDBManager()
 
 @app.post("/register")
-async def register_user_endpoint(username: str = Form(...), file: UploadFile = File(...)):
+async def register_user_endpoint(secret: str = Form(...), username: str = Form(...), file: UploadFile = File(...)):
+    if secret != "99tech3344":
+        return {"message": "Invalid secret key"}
     file_bytes = await file.read()
     img = Image.open(io.BytesIO(file_bytes))
     img_np = np.array(img)
@@ -42,7 +44,9 @@ async def register_user_endpoint(username: str = Form(...), file: UploadFile = F
     return Response(content=encoded_img, media_type="image/jpeg")
 
 @app.post("/verify")
-async def verify_user_endpoint(file: UploadFile = File(...), tolerance: float = Form(default=0.6)):
+async def verify_user_endpoint(secret: str = Form(...), file: UploadFile = File(...), tolerance: float = Form(default=0.6)):
+    if secret != "99tech3344":
+        return {"message": "Invalid secret key"}
     file_bytes = await file.read()
     img = Image.open(io.BytesIO(file_bytes))
     img_np = np.array(img)
@@ -52,14 +56,18 @@ async def verify_user_endpoint(file: UploadFile = File(...), tolerance: float = 
     return Response(content=encoded_img, media_type="image/jpeg")
 
 @app.get("/list-users")
-def list_users_endpoint():
+def list_users_endpoint(secret: str = Form(...)):
+    if secret != "99tech3344":
+        return {"message": "Invalid secret key"}
     users = face_manager.list_users()
     return users
 
 
 
 @app.delete("/delete-user/{user_id}")
-def delete_user_endpoint(user_id: int):
+def delete_user_endpoint(secret: str = Form(...), user_id: int = Form(...)):
+    if secret != "99tech3344":
+        return {"message": "Invalid secret key"}
     face_manager.delete_user(user_id)
     return {"message": f"User with ID {user_id} deleted."}
 
