@@ -12,21 +12,24 @@ Ensure you have these installed before proceeding.
 ## Setup
 
 1.  **Clone the repository:**
+ Clone this repository to your local machine: 
+  
+ git clone https://github.com/UmerRiaz22/Face-Recognition-System
 
     ```bash
-git clone https://github.com/UmerRiaz22/Face-Recognition-System
+     https://github.com/UmerRiaz22/Face-Recognition-System
 
 ```
 
 2.  **Create a virtual environment and activate it:**
 
-    ```bash
+    
 python -m venv venv
 # On Windows
 .\venv\Scripts\activate
 # On macOS/Linux
 source venv/bin/activate
-```
+
 
 3.  **Install dependencies:**
 
@@ -34,7 +37,7 @@ source venv/bin/activate
     pip install -r requirements.txt
     ```
 
-    *Note: A `requirements.txt` file is required with the necessary packages listed. Ensure the following packages are included:
+    ** Note: A `requirements.txt` file is required with the necessary packages listed. Ensure the following packages are included: **
     *   `fastapi`
     *   `uvicorn`
     *   `python-multipart`
@@ -53,10 +56,7 @@ source venv/bin/activate
 ## Running the Backend
 
 1.  **Navigate to the `Backendapis` directory:**
-
-    ```bash
-Goes to Cloned Folder
-```
+ 
 
 2.  **Activate your virtual environment (if not already active):**
 
