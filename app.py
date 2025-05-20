@@ -5,7 +5,7 @@ import face_recognition
 import psycopg2
 import io
 import base64
-from fastapi import FastAPI, UploadFile, File, Form, Response
+from fastapi import FastAPI, UploadFile, File, Form, Response, Path
 from PIL import Image
 import uvicorn
 import matplotlib
@@ -65,7 +65,7 @@ def list_users_endpoint(secret: str = Form(...)):
 
 
 @app.delete("/delete-user/{user_id}")
-def delete_user_endpoint(secret: str = Form(...), user_id: int = Form(...)):
+def delete_user_endpoint(secret: str = Form(...), user_id: int = Path(...)):
     if secret != "99tech3344":
         return {"message": "Invalid secret key"}
     face_manager.delete_user(user_id)

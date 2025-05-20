@@ -112,7 +112,11 @@ class FaceDBManager:
         user_id = cursor.fetchone()[0]
         conn.commit()
 
-        save_path = os.path.join(self.KNOWN_DIR, f"Registered_{username}.jpg")
+        save_path = os.path.join(
+        self.KNOWN_DIR,
+        f"Registered_{username}{user_id}.jpg"
+    )
+
         cv2.imwrite(save_path, cv2.cvtColor(img_np, cv2.COLOR_RGB2BGR))
 
         sql_update = "UPDATE users SET image_path = %s WHERE id = %s"
